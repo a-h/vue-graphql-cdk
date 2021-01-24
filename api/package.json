@@ -5,11 +5,11 @@
     "api": "bin/api.js"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "npx webpack --config webpack.config.js",
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
-    "deploy": "npm build && cdk deploy",
+    "deploy": "npm run build && cdk deploy",
     "graphql-codegen": "graphql-codegen --config codegen.yml"
   },
   "devDependencies": {
@@ -19,21 +19,24 @@
     "@types/aws-lambda": "^8.10.68",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
+    "@types/uuid": "^8.3.0",
     "aws-cdk": "1.86.0",
+    "ignore-loader": "^0.1.2",
     "jest": "^26.4.2",
     "ts-jest": "^26.2.0",
     "ts-loader": "^8.0.14",
     "ts-node": "^9.0.0",
     "typescript": "~3.9.7",
     "webpack": "^5.17.0",
-    "webpack-cli": "^4.4.0"
-  },
-  "dependencies": {
+    "webpack-cli": "^4.4.0",
     "@aws-cdk/aws-appsync": "^1.80.0",
     "@aws-cdk/aws-codedeploy": "^1.80.0",
     "@aws-cdk/aws-dynamodb": "^1.80.0",
-    "@aws-cdk/core": "1.86.0",
+    "@aws-cdk/core": "1.86.0"
+  },
+  "dependencies": {
     "aws-sdk": "^2.831.0",
-    "source-map-support": "^0.5.16"
+    "source-map-support": "^0.5.16",
+    "uuid": "^8.3.2"
   }
 }

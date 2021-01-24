@@ -2,6 +2,7 @@ import { AppSyncResolverEvent } from "aws-lambda";
 import { Url, MutationShortenArgs } from "../../graphql/types";
 import { DynamoDB } from "aws-sdk";
 import { PutItemInput } from "aws-sdk/clients/dynamodb";
+import { v4 as uuidv4 } from "uuid";
 
 // The event passed looks like this.
 /*
@@ -56,7 +57,7 @@ export const handler = async (
     } as PutItemInput)
     .promise();
   return {
-    id: "123",
+    id: uuidv4(),
     short: "shortURL",
     long: event.arguments.input.url,
     count: 0,
