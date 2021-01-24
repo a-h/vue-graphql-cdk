@@ -1,0 +1,43 @@
+{
+  "name": "web-infra",
+  "version": "1.0.0",
+  "description": "Serverless aws-nodejs-typescript template",
+  "main": "serverless.ts",
+  "scripts": {
+    "package": "./package.sh",
+    "deploy": "sls deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@middy/core": "^1.5.0",
+    "@middy/http-json-body-parser": "^1.5.0",
+    "@vendia/serverless-express": "^3.3.8",
+    "aws-lambda": "^1.0.6",
+    "axios": "^0.21.1",
+    "fastify": "^3.10.1",
+    "fastify-express": "^0.3.2",
+    "fastify-static": "^3.4.0",
+    "nuxt-start": "^2.14.12",
+    "source-map-support": "^0.5.19"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.14.12",
+    "@nuxt/typescript-build": "^2.0.4",
+    "@serverless/typescript": "^2.16.0",
+    "@types/aws-lambda": "^8.10.64",
+    "@types/node": "^14.14.6",
+    "copy-webpack-plugin": "^7.0.0",
+    "fork-ts-checker-webpack-plugin": "^6.0.0",
+    "json-schema-to-ts": "^1.4.1",
+    "serverless": "^2.16.0",
+    "serverless-webpack": "^5.2.0",
+    "ts-loader": "^8.0.10",
+    "ts-node": "^9.0.0",
+    "tsconfig-paths-webpack-plugin": "^3.3.0",
+    "typescript": "^4.0.5",
+    "webpack": "^5.4.0",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
+  "license": "MIT"
+}
