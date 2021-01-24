@@ -6,6 +6,7 @@ const fastifyStatic = require('fastify-static')
 const fastifyExpress = require('fastify-express')
 const config = require('./nuxt.config.js')
 
+// https://logaretm.com/blog/2019-08-29-cost-effective-serverless-nuxt-js/
 /**
  * Creates a fastify server with Nuxt middleware attached.
  **/
@@ -23,6 +24,8 @@ exports.createApp = async function start() {
   })
   await server.register(fastifyExpress)
 
+  //TODO: Don't serve this from API Gateway, move it to an S3 bucket.
+  //TODO: Reduce the contents of the code bundle.
   // Serve the `.nuxt/dist` folder using the `/_nuxt` prefix.
   await server.register(fastifyStatic, {
     root: path.join(__dirname, '.nuxt', 'dist'),
