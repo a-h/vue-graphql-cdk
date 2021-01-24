@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'web',
@@ -24,11 +24,10 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-    // https://go.nuxtjs.dev/stylelint
-    '@nuxtjs/stylelint-module',
-  ],
+    // Doc: https://github.com/nuxt-community/eslint-module
+    process.env.NODE_ENV !== 'production' ? '@nuxtjs/eslint-module' : '',
+    process.env.NODE_ENV !== 'production' ? '@nuxtjs/stylelint-module' : '',
+  ].filter(Boolean),
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

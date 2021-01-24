@@ -1,0 +1,33 @@
+# serverless.yml
+
+service: web
+
+# provider information
+# we are deploying on aws using the node 12.x runtime.
+provider:
+  name: aws
+  runtime: nodejs12.x
+  apiGateway:
+    shouldStartNameWithService: true
+
+# these are the functions that will run our app.
+# typically you need only one for our use-case.
+# our function is named app
+# the handler is located in lambda.js file exported as "nuxt".
+# our function will handle any HTTP requests to any path, you can change that if you want.
+functions:
+  app:
+    handler: lambda.nuxt
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
+
+# Add those plugins to our service
+plugins:
+  - serverless-offline
+  - serverless-apigw-binary
+
+custom:
+  apigwBinary:
+    types:
+      - '*/*'
