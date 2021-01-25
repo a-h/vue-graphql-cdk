@@ -12,10 +12,10 @@
     "deploy": "npm run build && cdk deploy"
   },
   "devDependencies": {
+    "@aws-cdk/assert": "1.86.0",
     "@aws-cdk/aws-apigateway": "^1.86.0",
     "@aws-cdk/aws-lambda": "^1.86.0",
     "@aws-cdk/core": "^1.86.0",
-    "@aws-cdk/assert": "1.86.0",
     "@types/aws-lambda": "^8.10.68",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
